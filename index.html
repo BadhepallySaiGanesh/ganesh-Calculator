@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            /* background:rgb(86, 86, 94); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+        }
+        .calculator{
+            background:rgb(114, 121, 134);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .calculator form input{
+            border: 0;
+            outline: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            box-shadow: -8px -8px 15px rgba(225,225,225,0.1),5px 5px 15px rgba(0,0,0,0.2);
+            background: transparent;
+            font-size: 20px;
+            color: #fff;
+            /* color: black; */
+            cursor: pointer;
+            margin: 10px;
+            font-size: x-large;
+             /* border: 1px solid ;
+            font-size: 700;  */
+        }
+        form .bigsize{
+            display: flex;
+            justify-content:flex-end;
+            margin: 10px 0px;
+            width: 100%;
+            /* border-bottom:2px solid rgb(241, 240, 237);
+            border-right: 2px solid rgb(241, 240, 237);
+            border-left: 2px solid rgb(241, 240, 237); */
+        }
+        form .bigsize input{
+            text-align: right;
+            flex: 1;
+            font-size: 45px;
+            font-weight: 400;
+            /* box-shadow: none; */
+            /* border: 4px solid; */
+            padding: 40px;
+        }
+        form input.equalbutton{
+            width: 145px;
+           background: green;
+        }
+        form input.allclear{
+            color:white;
+            font-weight: 500;
+            background: rgb(10, 161, 243);
+        }
+        form input.delete{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="calculator">
+        <form >
+            <div class="bigsize">
+                <input type="text" name="display">
+            </div>
+            <div>
+                <input type="button" value="Ac" onclick="display.value = ' ' "  class="allclear" >
+                <input type="button" value="De" onclick="display.value = display.value.toString().slice(0,-1)" class="delete">
+                <input type="button" value="." onclick="display.value += '.' ">
+                <input type="button" value="/" onclick="display.value += '/' ">
+            </div>
+            <div>
+                <input type="button" value="7" onclick="display.value += '7' ">
+                <input type="button" value="8" onclick="display.value += '8' ">
+                <input type="button" value="9" onclick="display.value += '9' ">
+                <input type="button" value="*" onclick="display.value += '*' ">
+            </div>
+            <div>
+                <input type="button" value="4" onclick="display.value += '4' ">
+                <input type="button" value="5" onclick="display.value += '5' ">
+                <input type="button" value="6" onclick="display.value += '6' ">
+                <input type="button" value="-" onclick="display.value += '-' ">
+            </div>
+            <div>
+                <input type="button" value="1" onclick="display.value += '1' ">
+                <input type="button" value="2" onclick="display.value += '2' ">
+                <input type="button" value="3" onclick="display.value += '3' ">
+                <input type="button" value="+" onclick="display.value += '+' ">
+            </div>
+            <div>
+                <input type="button" value="00" onclick="display.value += '00' ">
+                <input type="button" value="0" onclick="display.value += '0' ">
+                <input type="button" value="=" onclick="display.value = eval(display.value)" class="equalbutton">
+            </div>
+        </form>
+    </div>
+   </div>
+
+</body>
+</html>
